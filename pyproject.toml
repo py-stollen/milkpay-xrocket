@@ -23,8 +23,8 @@ keywords = [
     "client",
 ]
 dependencies = [
-    "pydantic>=2.4.1,<2.9",
-    "stollen~=0.2.9",
+    "pydantic>=2.4.1,<2.10",
+    "stollen~=0.2.10",
 ]
 classifiers = [
     "License :: OSI Approved :: MIT License",
@@ -53,8 +53,8 @@ dev = [
 ]
 [project.urls]
 Repository = "https://github.com/py-stollen/milkpay-xrocket"
-"Pay API Documentation" = "https://pay.ton-rocket.com/api"
-"Exchange API Documentation" = "https://trade.ton-rocket.com/api"
+"Pay API Documentation" = "https://pay.xrocket.tg/api"
+"Exchange API Documentation" = "https://trade.xrocket.tg/api"
 
 [tool.black]
 line-length = 99

@@ -47,7 +47,7 @@ class PayXRocket(Stollen):
 
         subdomain: str = "pay" if production else "dev-pay"
         super().__init__(
-            base_url=f"https://{subdomain}.ton-rocket.com",
+            base_url=f"https://{subdomain}.xrocket.tg",
             error_message_key=["message"],
             global_request_fields=fields,
             general_error_class=PayXRocketError,

@@ -47,7 +47,7 @@ class TradeXRocket(Stollen):
 
         subdomain: str = "trade" if production else "dev-trade"
         super().__init__(
-            base_url=f"https://{subdomain}.ton-rocket.com",
+            base_url=f"https://{subdomain}.xrocket.tg",
             error_message_key=["message"],
             global_request_fields=fields,
             general_error_class=TradeXRocketError,
