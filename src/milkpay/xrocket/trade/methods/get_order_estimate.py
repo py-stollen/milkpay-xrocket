@@ -1,3 +1,5 @@
+from typing import Union
+
 from pydantic import Field
 from stollen.enums import HTTPMethod
 
@@ -16,15 +18,15 @@ class GetOrderEstimate(
     Returns order estimate
     """
 
-    pair_id: int | float = Field(serialization_alias="pairId")
+    pair_id: Union[int, float] = Field(serialization_alias="pairId")
     """Pair ID"""
     type: str
     """Order type"""
     execute_type: str = Field(serialization_alias="executeType")
     """Order execute type"""
-    rate: int | float
+    rate: Union[int, float]
     """Order rate"""
-    amount: int | float
+    amount: Union[int, float]
     """Amount"""
     currency: str
     """Amount currency"""

@@ -1,10 +1,12 @@
+from typing import Union
+
 from .base import TradeXRocketObject
 
 
 class ResponsePaginatedDto(TradeXRocketObject):
     success: bool
     """Indicate if request is successful"""
-    total: int | float
+    total: Union[int, float]
     """Total times"""
-    limit: int | float
-    offset: int | float
+    limit: Union[int, float]
+    offset: Union[int, float]

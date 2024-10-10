@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Union
 
 from pydantic import Field
 
@@ -10,7 +10,7 @@ from .exchange_order_last_execution_dto import ExchangeOrderLastExecutionDto
 
 
 class ExchangeOrderDto(TradeXRocketObject):
-    order_id: int | float = Field(alias="orderId")
+    order_id: Union[int, float] = Field(alias="orderId")
     """Order ID"""
     pair: str
     """Pair name"""
@@ -20,13 +20,13 @@ class ExchangeOrderDto(TradeXRocketObject):
     """Order execute type"""
     status: str
     """Order status"""
-    rate: int | float
+    rate: Union[int, float]
     """Rate"""
-    main_amount: int | float = Field(alias="mainAmount")
+    main_amount: Union[int, float] = Field(alias="mainAmount")
     """Init main amount"""
-    secondary_amount: int | float = Field(alias="secondaryAmount")
+    secondary_amount: Union[int, float] = Field(alias="secondaryAmount")
     """Init secondary amount"""
-    filled: int | float
+    filled: Union[int, float]
     """Filled percent"""
     balance: ExchangeOrderBalanceDto
     """Now order balance"""

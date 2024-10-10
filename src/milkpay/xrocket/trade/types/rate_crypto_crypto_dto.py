@@ -1,3 +1,5 @@
+from typing import Union
+
 from pydantic import Field
 
 from .base import TradeXRocketObject
@@ -8,5 +10,5 @@ class RateCryptoCryptoDto(TradeXRocketObject):
     """From crypto currency"""
     quote_currency: str = Field(alias="quoteCurrency")
     """To crypto currency"""
-    rate: int | float
+    rate: Union[int, float]
     """Crypto rate in crypto"""

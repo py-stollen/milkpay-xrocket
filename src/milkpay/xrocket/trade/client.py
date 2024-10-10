@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Optional
+from typing import TYPE_CHECKING, Any, Optional, Union
 
 from stollen import Stollen
 from stollen.requests.fields import Header, RequestField
@@ -128,7 +128,7 @@ class TradeXRocket(Stollen):
         network: str,
         address: str,
         currency: str,
-        amount: int | float,
+        amount: Union[int, float],
         withdrawal_id: str,
         comment: Optional[str] = None,
     ) -> WithdrawalResponseDto:
@@ -314,8 +314,8 @@ class TradeXRocket(Stollen):
     async def get_orders(
         self,
         *,
-        limit: Optional[int | float] = None,
-        offset: Optional[int | float] = None,
+        limit: Optional[Union[int, float]] = None,
+        offset: Optional[Union[int, float]] = None,
         only_active: bool,
     ) -> Pagination[ExchangeOrderDto]:
         """
@@ -338,8 +338,8 @@ class TradeXRocket(Stollen):
         pair: str,
         type_: str,
         execute_type: str,
-        rate: Optional[int | float] = None,
-        amount: int | float,
+        rate: Optional[Union[int, float]] = None,
+        amount: Union[int, float],
         currency: str,
     ) -> ExchangeOrderDto:
         """
@@ -363,8 +363,8 @@ class TradeXRocket(Stollen):
         self,
         *,
         pair: str,
-        limit: Optional[int | float] = None,
-        offset: Optional[int | float] = None,
+        limit: Optional[Union[int, float]] = None,
+        offset: Optional[Union[int, float]] = None,
         only_active: bool,
     ) -> Pagination[ExchangeOrderDto]:
         """
@@ -419,11 +419,11 @@ class TradeXRocket(Stollen):
     async def get_order_estimate(
         self,
         *,
-        pair_id: int | float,
+        pair_id: Union[int, float],
         type_: str,
         execute_type: str,
-        rate: int | float,
-        amount: int | float,
+        rate: Union[int, float],
+        amount: Union[int, float],
         currency: str,
     ) -> OrderEstimateDto:
         """
@@ -447,7 +447,7 @@ class TradeXRocket(Stollen):
         self,
         *,
         pair: str,
-        limit: Optional[int | float] = None,
+        limit: Optional[Union[int, float]] = None,
     ) -> list[LastTradesResponseDto]:
         """
         Get last trades by pair

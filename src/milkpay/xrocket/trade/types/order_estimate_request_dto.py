@@ -1,18 +1,20 @@
+from typing import Union
+
 from pydantic import Field
 
 from .base import TradeXRocketObject
 
 
 class OrderEstimateRequestDto(TradeXRocketObject):
-    pair_id: int | float = Field(alias="pairId")
+    pair_id: Union[int, float] = Field(alias="pairId")
     """Pair ID"""
     type: str
     """Order type"""
     execute_type: str = Field(alias="executeType")
     """Order execute type"""
-    rate: int | float
+    rate: Union[int, float]
     """Order rate"""
-    amount: int | float
+    amount: Union[int, float]
     """Amount"""
     currency: str
     """Amount currency"""

@@ -1,7 +1,7 @@
-from enum import StrEnum, auto
+from enum import Enum
 
 
-class ChequeStatus(StrEnum):
-    ACTIVE = auto()
-    COMPLETED = auto()
-    DRAFT = auto()
+class ChequeStatus(str, Enum):
+    ACTIVE = "active"
+    COMPLETED = "completed"
+    DRAFT = "draft"

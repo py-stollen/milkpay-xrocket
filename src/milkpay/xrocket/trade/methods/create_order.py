@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from pydantic import Field
 from stollen.enums import HTTPMethod
@@ -24,9 +24,9 @@ class CreateOrder(
     """Order type"""
     execute_type: str = Field(serialization_alias="executeType")
     """Order execute type"""
-    rate: Optional[int | float] = None
+    rate: Optional[Union[int, float]] = None
     """Order rate for executeType=LIMIT"""
-    amount: int | float
+    amount: Union[int, float]
     """Order amount"""
     currency: str
     """Amount currency"""

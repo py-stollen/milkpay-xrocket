@@ -1,3 +1,5 @@
+from typing import Union
+
 from pydantic import Field
 
 from .base import TradeXRocketObject
@@ -6,7 +8,7 @@ from .base import TradeXRocketObject
 class AccountBalanceDto(TradeXRocketObject):
     code: str
     """Crypto code"""
-    amount: int | float
+    amount: Union[int, float]
     """Amount crypto"""
-    locked_in_orders: int | float = Field(alias="lockedInOrders")
+    locked_in_orders: Union[int, float] = Field(alias="lockedInOrders")
     """Amount locked in exchange orders"""

@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class WebhookType(StrEnum):
+class WebhookType(str, Enum):
     INVOICE_PAY = "invoicePay"
     SUBSCRIPTION_PAY = "subscriptionPay"
     SUBSCRIPTION_END = "subscriptionEnd"

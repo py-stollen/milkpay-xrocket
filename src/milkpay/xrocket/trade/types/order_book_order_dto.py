@@ -1,3 +1,5 @@
+from typing import Union
+
 from pydantic import Field
 
 from .base import TradeXRocketObject
@@ -6,9 +8,9 @@ from .base import TradeXRocketObject
 class OrderBookOrderDto(TradeXRocketObject):
     type: str
     """Order type"""
-    rate: int | float
+    rate: Union[int, float]
     """Order rate"""
-    value: int | float
+    value: Union[int, float]
     """Order base value"""
-    quote_value: int | float = Field(alias="quoteValue")
+    quote_value: Union[int, float] = Field(alias="quoteValue")
     """Order quote value"""

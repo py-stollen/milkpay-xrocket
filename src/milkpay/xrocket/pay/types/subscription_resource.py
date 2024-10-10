@@ -1,10 +1,12 @@
+from typing import Union
+
 from pydantic import Field
 
 from .base import PayXRocketObject
 
 
 class SubscriptionResource(PayXRocketObject):
-    id: int | float
+    id: Union[int, float]
     """Resource ID"""
     type: str
     """Resource type"""

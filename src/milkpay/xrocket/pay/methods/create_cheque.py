@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from pydantic import Field
 from stollen.enums import HTTPMethod
@@ -20,11 +20,11 @@ class CreateCheque(
 
     currency: str
     """Currency of transfer, info /currencies/available"""
-    cheque_per_user: int | float = Field(serialization_alias="chequePerUser")
+    cheque_per_user: Union[int, float] = Field(serialization_alias="chequePerUser")
     """Cheque amount for one user. 9 decimal places, others cut off"""
-    users_number: int | float = Field(serialization_alias="usersNumber")
+    users_number: Union[int, float] = Field(serialization_alias="usersNumber")
     """Number of users to save multicheque. 0 decimal places"""
-    ref_program: int | float = Field(serialization_alias="refProgram")
+    ref_program: Union[int, float] = Field(serialization_alias="refProgram")
     """Referral program percentage (%). 0 decimal places"""
     password: Optional[str] = None
     """Password for cheque"""

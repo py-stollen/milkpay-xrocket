@@ -1,10 +1,12 @@
+from typing import Union
+
 from pydantic import Field
 
 from .base import TradeXRocketObject
 
 
 class ExchangeOrderFilledBalanceDto(TradeXRocketObject):
-    main_amount: int | float = Field(alias="mainAmount")
+    main_amount: Union[int, float] = Field(alias="mainAmount")
     """Current base amount"""
-    secondary_amount: int | float = Field(alias="secondaryAmount")
+    secondary_amount: Union[int, float] = Field(alias="secondaryAmount")
     """Current quote amount"""

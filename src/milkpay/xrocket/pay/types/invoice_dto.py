@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Union
 
 from pydantic import Field
 
@@ -7,15 +7,15 @@ from .base import PayXRocketObject
 
 
 class InvoiceDto(PayXRocketObject):
-    id: int | float
+    id: Union[int, float]
     """Invoice ID"""
-    amount: int | float
+    amount: Union[int, float]
     """Amount of invoice"""
-    min_payment: Optional[int | float] = Field(default=None, alias="minPayment")
+    min_payment: Optional[Union[int, float]] = Field(default=None, alias="minPayment")
     """Min payment of invoice"""
-    total_activations: int | float = Field(alias="totalActivations")
+    total_activations: Union[int, float] = Field(alias="totalActivations")
     """Total activations of invoice"""
-    activations_left: int | float = Field(alias="activationsLeft")
+    activations_left: Union[int, float] = Field(alias="activationsLeft")
     """Activations left of invoice"""
     description: Optional[str] = None
     """Invoice description"""
@@ -33,6 +33,6 @@ class InvoiceDto(PayXRocketObject):
     paid: Optional[datetime] = None
     """When invoice was paid"""
     status: str
-    expired_in: Optional[int | float] = Field(default=None, alias="expiredIn")
+    expired_in: Optional[Union[int, float]] = Field(default=None, alias="expiredIn")
     """Invoice expire time in seconds, max 1 day, 0 - none expired"""
     link: str

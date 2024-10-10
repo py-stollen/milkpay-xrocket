@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class SubscriptionInterval(StrEnum):
+class SubscriptionInterval(str, Enum):
     DAY = "DAY"
     WEEK = "WEEK"
     MONTH = "MONTH"

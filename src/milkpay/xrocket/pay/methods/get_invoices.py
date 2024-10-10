@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from stollen.enums import HTTPMethod
 
@@ -17,5 +17,5 @@ class GetInvoices(
     Get list of invoices
     """
 
-    limit: Optional[int | float] = None
-    offset: Optional[int | float] = None
+    limit: Optional[Union[int, float]] = None
+    offset: Optional[Union[int, float]] = None

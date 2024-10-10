@@ -1,6 +1,6 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class OrderExecuteType(StrEnum):
+class OrderExecuteType(str, Enum):
     LIMIT = "LIMIT"
     MARKET = "MARKET"

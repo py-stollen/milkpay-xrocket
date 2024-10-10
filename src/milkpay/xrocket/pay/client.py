@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from hashlib import sha256
 from hmac import HMAC
-from typing import TYPE_CHECKING, Any, Optional
+from typing import TYPE_CHECKING, Any, Optional, Union
 
 from stollen import Stollen
 from stollen.requests.fields import Header, RequestField
@@ -80,9 +80,9 @@ class PayXRocket(Stollen):
         self,
         *,
         currency: str,
-        cheque_per_user: int | float,
-        users_number: int | float,
-        ref_program: int | float,
+        cheque_per_user: Union[int, float],
+        users_number: Union[int, float],
+        ref_program: Union[int, float],
         password: Optional[str] = None,
         description: Optional[str] = None,
         send_notifications: Optional[bool] = None,
@@ -118,8 +118,8 @@ class PayXRocket(Stollen):
     async def get_cheques(
         self,
         *,
-        limit: Optional[int | float] = None,
-        offset: Optional[int | float] = None,
+        limit: Optional[Union[int, float]] = None,
+        offset: Optional[Union[int, float]] = None,
     ) -> Pagination[ShortChequeDto]:
         """
         Get list of multi-cheques
@@ -215,9 +215,9 @@ class PayXRocket(Stollen):
     async def transfer(
         self,
         *,
-        tg_user_id: int | float,
+        tg_user_id: Union[int, float],
         currency: str,
-        amount: int | float,
+        amount: Union[int, float],
         transfer_id: str,
         description: Optional[str] = None,
     ) -> TransferDto:
@@ -243,7 +243,7 @@ class PayXRocket(Stollen):
         network: str,
         address: str,
         currency: str,
-        amount: int | float,
+        amount: Union[int, float],
         withdrawal_id: str,
         comment: Optional[str] = None,
     ) -> WithdrawalDto:
@@ -301,16 +301,16 @@ class PayXRocket(Stollen):
     async def create_invoice(
         self,
         *,
-        amount: Optional[int | float] = None,
-        min_payment: Optional[int | float] = None,
-        num_payments: int | float,
+        amount: Optional[Union[int, float]] = None,
+        min_payment: Optional[Union[int, float]] = None,
+        num_payments: Union[int, float],
         currency: str,
         description: Optional[str] = None,
         hidden_message: Optional[str] = None,
         comments_enabled: Optional[bool] = None,
         callback_url: Optional[str] = None,
         payload: Optional[str] = None,
-        expired_in: Optional[int | float] = None,
+        expired_in: Optional[Union[int, float]] = None,
     ) -> InvoiceDto:
         """
         Create invoice
@@ -336,8 +336,8 @@ class PayXRocket(Stollen):
     async def get_invoices(
         self,
         *,
-        limit: Optional[int | float] = None,
-        offset: Optional[int | float] = None,
+        limit: Optional[Union[int, float]] = None,
+        offset: Optional[Union[int, float]] = None,
     ) -> Pagination[InvoiceDto]:
         """
         Get list of invoices
@@ -405,7 +405,7 @@ class PayXRocket(Stollen):
         currency: str,
         interval: list[SubscriptionIntervalDto],
         tg_resource: Optional[str] = None,
-        referral_percent: int | float,
+        referral_percent: Union[int, float],
         return_url: Optional[str] = None,
     ) -> Subscription:
         """
@@ -429,8 +429,8 @@ class PayXRocket(Stollen):
     async def get_subscriptions(
         self,
         *,
-        limit: Optional[int | float] = None,
-        offset: Optional[int | float] = None,
+        limit: Optional[Union[int, float]] = None,
+        offset: Optional[Union[int, float]] = None,
     ) -> Pagination[Subscription]:
         """
         Get list of subscription
@@ -483,7 +483,7 @@ class PayXRocket(Stollen):
         self,
         *,
         subscription_id: str,
-        user_id: int | float,
+        user_id: Union[int, float],
     ) -> UserSubscription:
         from .methods import CheckSubscription
 
@@ -558,7 +558,7 @@ class PayXRocket(Stollen):
         *,
         subscription_id: str,
         interval: str,
-        amount: int | float,
+        amount: Union[int, float],
         status: str,
     ) -> SubscriptionInterval:
         """

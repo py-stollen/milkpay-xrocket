@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from pydantic import Field
 
@@ -8,7 +8,7 @@ from .subscription_resource import SubscriptionResource
 
 
 class Subscription(PayXRocketObject):
-    id: int | float
+    id: Union[int, float]
     """Subscription ID"""
     name: str
     """Subscription name"""
@@ -20,7 +20,7 @@ class Subscription(PayXRocketObject):
     """Link to subscription"""
     interval: SubscriptionInterval
     """Subscription interval"""
-    referral_percent: int | float = Field(alias="referralPercent")
+    referral_percent: Union[int, float] = Field(alias="referralPercent")
     """Subscription referral percent"""
     return_url: Optional[str] = Field(default=None, alias="returnUrl")
     """Return link after payment"""

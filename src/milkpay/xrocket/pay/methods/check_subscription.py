@@ -1,3 +1,5 @@
+from typing import Union
+
 from pydantic import Field
 from stollen.enums import HTTPMethod
 
@@ -13,5 +15,5 @@ class CheckSubscription(
     response_data_key=["data"],
 ):
     subscription_id: str
-    user_id: int | float = Field(serialization_alias="userId")
+    user_id: Union[int, float] = Field(serialization_alias="userId")
     """TG User id"""

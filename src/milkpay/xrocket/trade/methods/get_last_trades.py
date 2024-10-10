@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from stollen.enums import HTTPMethod
 
@@ -18,4 +18,4 @@ class GetLastTrades(
     """
 
     pair: str
-    limit: Optional[int | float] = None
+    limit: Optional[Union[int, float]] = None

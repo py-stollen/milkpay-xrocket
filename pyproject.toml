@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "milkpay.xrocket"
 description = "A lightweight xRocket API Python SDK"
 readme = "README.rst"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 license = "MIT"
 authors = [
     { name = "wakaree", email = "nullmatawasoradesu@gmail.com" },
@@ -24,7 +24,7 @@ keywords = [
 ]
 dependencies = [
     "pydantic>=2.4.1,<2.10",
-    "stollen~=0.2.10",
+    "stollen~=0.2.11",
 ]
 classifiers = [
     "License :: OSI Approved :: MIT License",
@@ -32,6 +32,8 @@ classifiers = [
     "Environment :: Console",
     "Typing :: Typed",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -58,7 +60,7 @@ Repository = "https://github.com/py-stollen/milkpay-xrocket"
 
 [tool.black]
 line-length = 99
-target-version = ['py311']
+target-version = ["py39"]
 exclude = '''
 (
     \.eggs
@@ -71,7 +73,7 @@ exclude = '''
 '''
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py39"
 line-length = 99
 lint.select = [
     "C",

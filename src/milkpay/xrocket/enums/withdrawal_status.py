@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class WithdrawalStatus(StrEnum):
+class WithdrawalStatus(str, Enum):
     CREATED = "CREATED"
     COMPLETED = "COMPLETED"
     FAIL = "FAIL"

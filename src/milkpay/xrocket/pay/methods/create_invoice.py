@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from pydantic import Field
 from stollen.enums import HTTPMethod
@@ -18,11 +18,13 @@ class CreateInvoice(
     Create invoice
     """
 
-    amount: Optional[int | float] = None
+    amount: Optional[Union[int, float]] = None
     """Invoice amount. 9 decimal places, others cut off"""
-    min_payment: Optional[int | float] = Field(default=None, serialization_alias="minPayment")
+    min_payment: Optional[Union[int, float]] = Field(
+        default=None, serialization_alias="minPayment"
+    )
     """Min payment only for multi invoice if invoice amount is null"""
-    num_payments: int | float = Field(serialization_alias="numPayments")
+    num_payments: Union[int, float] = Field(serialization_alias="numPayments")
     """Num payments for invoice"""
     currency: str
     """Currency of transfer, info /currencies/available"""
@@ -36,5 +38,5 @@ class CreateInvoice(
     """Url for Return button after invoice is paid"""
     payload: Optional[str] = None
     """Any data. Invisible to user, will be returned in callback"""
-    expired_in: Optional[int | float] = Field(default=None, serialization_alias="expiredIn")
+    expired_in: Optional[Union[int, float]] = Field(default=None, serialization_alias="expiredIn")
     """Invoice expire time in seconds, max 1 day, 0 - none expired"""

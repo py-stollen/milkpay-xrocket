@@ -1,7 +1,7 @@
-from enum import StrEnum, auto
+from enum import Enum
 
 
-class InvoiceStatus(StrEnum):
-    ACTIVE = auto()
-    PAID = auto()
-    EXPIRED = auto()
+class InvoiceStatus(str, Enum):
+    ACTIVE = "active"
+    PAID = "paid"
+    EXPIRED = "expired"

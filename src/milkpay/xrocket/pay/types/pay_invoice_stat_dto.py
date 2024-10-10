@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Union
 
 from pydantic import Field
 
@@ -6,11 +7,11 @@ from .base import PayXRocketObject
 
 
 class PayInvoiceStatDto(PayXRocketObject):
-    user_id: int | float = Field(alias="userId")
+    user_id: Union[int, float] = Field(alias="userId")
     """Telegram ID of user who made transaction"""
-    payment_num: int | float = Field(alias="paymentNum")
+    payment_num: Union[int, float] = Field(alias="paymentNum")
     """Num of payments in transaction"""
-    payment_amount: int | float = Field(alias="paymentAmount")
+    payment_amount: Union[int, float] = Field(alias="paymentAmount")
     """Amount of payments in transaction"""
     comment: str
     """Comment on payment"""

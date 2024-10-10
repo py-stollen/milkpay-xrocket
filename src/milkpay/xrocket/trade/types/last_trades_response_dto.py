@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Union
 
 from pydantic import Field
 
@@ -6,13 +7,13 @@ from .base import TradeXRocketObject
 
 
 class LastTradesResponseDto(TradeXRocketObject):
-    amount: int | float
+    amount: Union[int, float]
     """Amount in quote token"""
     order_time: datetime = Field(alias="orderTime")
     """Order time"""
-    price: int | float
+    price: Union[int, float]
     """Order price"""
-    quantity: int | float
+    quantity: Union[int, float]
     """Quantity in base token"""
     side: str
     """Volume"""

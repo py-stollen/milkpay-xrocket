@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class NetworkCode(StrEnum):
+class NetworkCode(str, Enum):
     TON = "TON"
     BSC = "BSC"
     ETH = "ETH"

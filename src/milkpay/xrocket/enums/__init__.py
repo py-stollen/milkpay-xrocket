@@ -1,4 +1,3 @@
-
 from .cheque_status import ChequeStatus
 from .invoice_status import InvoiceStatus
 from .network_code import NetworkCode

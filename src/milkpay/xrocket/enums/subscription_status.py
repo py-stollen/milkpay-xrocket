@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class SubscriptionStatus(StrEnum):
+class SubscriptionStatus(str, Enum):
     ACTIVE = "ACTIVE"
     ARCHIVE = "ARCHIVE"
     DELETED = "DELETED"

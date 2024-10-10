@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class OrderStatus(StrEnum):
+class OrderStatus(str, Enum):
     CREATED = "CREATED"
     CANCELLED = "CANCELLED"
     EXECUTED = "EXECUTED"

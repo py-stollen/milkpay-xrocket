@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from pydantic import Field
 from stollen.enums import HTTPMethod
@@ -24,7 +24,7 @@ class Withdrawal(
     """Withdrawal address"""
     currency: str
     """Currency code"""
-    amount: int | float
+    amount: Union[int, float]
     """Withdrawal amount. 9 decimal places, others cut off"""
     withdrawal_id: str = Field(serialization_alias="withdrawalId")
     """Unique withdrawal ID in your system to prevent double spends"""
