@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Union
+from typing import Union, Optional
 
 from pydantic import Field
 
@@ -13,7 +13,7 @@ class PayInvoiceStatDto(PayXRocketObject):
     """Num of payments in transaction"""
     payment_amount: Union[int, float] = Field(alias="paymentAmount")
     """Amount of payments in transaction"""
-    comment: str
+    comment: Optional[str] = None
     """Comment on payment"""
-    paid: datetime
+    paid: Optional[datetime] = None
     """When transaction was paid"""
