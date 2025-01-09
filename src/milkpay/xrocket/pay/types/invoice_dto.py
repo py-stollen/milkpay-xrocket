@@ -28,7 +28,7 @@ class InvoiceDto(PayXRocketObject):
     comments_enabled: Optional[bool] = Field(default=None, alias="commentsEnabled")
     """Allow comments for invoice"""
     currency: str
-    created: datetime
+    created: Optional[datetime] = None
     """When invoice was created"""
     paid: Optional[datetime] = None
     """When invoice was paid"""
