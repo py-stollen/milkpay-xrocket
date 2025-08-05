@@ -12,6 +12,7 @@ dist/
 site/
 *.egg-info/
 *.egg
+uv.lock
 
 .ruff_cache
 .mypy_cache

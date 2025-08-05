@@ -43,7 +43,7 @@ class TradeXRocket(Stollen):
 
         fields: list[RequestField] = []
         if trade_key is not None:
-            fields.append(Header(name="Rocket-trade-Key", value=trade_key))
+            fields.append(Header(name="Rocket-Exchange-Key", value=trade_key))
 
         subdomain: str = "trade" if production else "dev-trade"
         super().__init__(
