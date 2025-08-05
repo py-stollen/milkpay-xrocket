@@ -10,5 +10,5 @@ class AccountBalanceDto(TradeXRocketObject):
     """Crypto code"""
     amount: Union[int, float]
     """Amount crypto"""
-    locked_in_orders: Union[int, float] = Field(alias="lockedInOrders")
+    locked_in_orders: Union[int, float, None] = Field(alias="lockedInOrders", default=None)
     """Amount locked in exchange orders"""
