@@ -23,7 +23,7 @@ keywords = [
     "client",
 ]
 dependencies = [
-    "pydantic>=2.4.1,<2.10",
+    "pydantic>=2.4.1,<2.12",
     "stollen>=0.2.11,<1.0",
 ]
 classifiers = [
