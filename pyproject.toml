@@ -23,8 +23,8 @@ keywords = [
     "client",
 ]
 dependencies = [
-    "pydantic>=2.4.1,<2.12",
-    "stollen>=0.2.11,<1.0",
+    "pydantic>=2.4.1",
+    "stollen>=0.2.11"
 ]
 classifiers = [
     "License :: OSI Approved :: MIT License",
